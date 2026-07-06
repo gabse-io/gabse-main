@@ -56,11 +56,6 @@ export const ownProjects = [
       { id: 'admin', label: 'Panel Administrativo', color: '#0d0d0d' }
     ]
   },
-  { id: 2, title: "VTEX Bulk Updater", icon: "fas fa-database", description: "Actualización masiva de SKUs, precios y stock desde Google Sheets a VTEX.", tech: ["Apps Script", "VTEX API", "Google Sheets"] },
-  { id: 3, title: "n8n Middleware Hub", icon: "fas fa-diagram-project", description: "Workflows n8n para sincronización entre VTEX OMS y ERPs.", tech: ["n8n", "Cloudflare Workers", "Webhooks"] },
-  { id: 4, title: "Cloudflare Edge Config", icon: "fas fa-cloud", description: "Reglas de caché y Workers para optimizar rendimiento headless.", tech: ["Cloudflare Workers", "Cache Rules", "Performance"] },
-  { id: 5, title: "Windsurf Component Library", icon: "fab fa-react", description: "Componentes React reutilizables para VTEX IO.", tech: ["React", "VTEX IO", "Windsurf IDE"] },
-  { id: 6, title: "Apps Script Automation Suite", icon: "fab fa-google", description: "Suite de automatizaciones para conciliación bancaria.", tech: ["Apps Script", "VTEX Payments", "Drive API"] }
 ];
 
 export const typingTexts = [
