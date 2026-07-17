@@ -245,11 +245,14 @@ carouselTrack.addEventListener('keydown', (e) => {
 
 /* ===== Scroll Reveal ===== */
 let scrollObserver = null;
+let observerReady = false;
 
 function initBidirectionalScrollReveal() {
   if (scrollObserver) {
     scrollObserver.disconnect();
   }
+
+  observerReady = false;
 
   const elementsToObserve = [
     ...document.querySelectorAll('.exp-block'),
@@ -259,7 +262,16 @@ function initBidirectionalScrollReveal() {
     document.getElementById('footer'),
   ].filter(el => el !== null);
 
+  for (const el of elementsToObserve) {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.remove('hidden-up');
+      el.classList.add('revealed');
+    }
+  }
+
   scrollObserver = new IntersectionObserver((entries) => {
+    if (!observerReady) return;
     for (const entry of entries) {
       const target = entry.target;
       if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
@@ -270,21 +282,13 @@ function initBidirectionalScrollReveal() {
         target.classList.add('hidden-up');
       }
     }
-  }, { threshold: [0, 0.1, 0.15, 0.5, 0.8, 1], rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: [0, 0.1, 0.15, 0.5, 0.8, 1], rootMargin: '-70px 0px -50px 0px' });
 
   for (const el of elementsToObserve) {
     scrollObserver.observe(el);
   }
 
-  const rootMargin = 50;
-  for (const el of elementsToObserve) {
-    const rect = el.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight - rootMargin && rect.bottom > rootMargin;
-    if (isVisible) {
-      el.classList.remove('hidden-up');
-      el.classList.add('revealed');
-    }
-  }
+  setTimeout(() => { observerReady = true; }, 800);
 }
 
 /* ===== Outbound link tracking ===== */
@@ -584,21 +588,4 @@ window.addEventListener('resize', () => {
 renderTimeline();
 renderProjectsCarousel();
 
-const elementsToReveal = [
-  ...document.querySelectorAll('.exp-block'),
-  ...document.querySelectorAll('.project-card'),
-  ...document.querySelectorAll('.section-title'),
-  ...document.querySelectorAll('.timeline-node'),
-  document.getElementById('footer'),
-].filter(el => el !== null);
-
-for (const el of elementsToReveal) {
-  const rect = el.getBoundingClientRect();
-  if (rect.top < window.innerHeight && rect.bottom > 0) {
-    el.classList.add('revealed');
-  }
-}
-
-requestAnimationFrame(() => {
-  initBidirectionalScrollReveal();
-});
+initBidirectionalScrollReveal();
