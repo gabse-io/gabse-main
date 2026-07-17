@@ -273,16 +273,11 @@ function initBidirectionalScrollReveal() {
   scrollObserver = new IntersectionObserver((entries) => {
     if (!observerReady) return;
     for (const entry of entries) {
-      const target = entry.target;
       if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
-        target.classList.remove('hidden-up');
-        target.classList.add('revealed');
-      } else if (!entry.isIntersecting || entry.intersectionRatio < 0.1) {
-        target.classList.remove('revealed');
-        target.classList.add('hidden-up');
+        entry.target.classList.add('revealed');
       }
     }
-  }, { threshold: [0, 0.1, 0.15, 0.5, 0.8, 1], rootMargin: '-70px 0px -50px 0px' });
+  }, { threshold: [0.15, 0.5, 1], rootMargin: '-70px 0px -50px 0px' });
 
   for (const el of elementsToObserve) {
     scrollObserver.observe(el);
