@@ -275,6 +275,16 @@ function initBidirectionalScrollReveal() {
   for (const el of elementsToObserve) {
     scrollObserver.observe(el);
   }
+
+  const rootMargin = 50;
+  for (const el of elementsToObserve) {
+    const rect = el.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight - rootMargin && rect.bottom > rootMargin;
+    if (isVisible) {
+      el.classList.remove('hidden-up');
+      el.classList.add('revealed');
+    }
+  }
 }
 
 /* ===== Outbound link tracking ===== */
@@ -573,6 +583,22 @@ window.addEventListener('resize', () => {
 /* ===== Init ===== */
 renderTimeline();
 renderProjectsCarousel();
+
+const elementsToReveal = [
+  ...document.querySelectorAll('.exp-block'),
+  ...document.querySelectorAll('.project-card'),
+  ...document.querySelectorAll('.section-title'),
+  ...document.querySelectorAll('.timeline-node'),
+  document.getElementById('footer'),
+].filter(el => el !== null);
+
+for (const el of elementsToReveal) {
+  const rect = el.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    el.classList.add('revealed');
+  }
+}
+
 requestAnimationFrame(() => {
   initBidirectionalScrollReveal();
 });
