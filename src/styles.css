@@ -575,6 +575,8 @@ footer.revealed {
   transform: translateY(0);
 }
 
+.footer-contact-row { display: none; }
+
 .footer-social {
   display: flex;
   justify-content: center;
@@ -1064,100 +1066,15 @@ footer.revealed {
     color: #444 !important;
   }
 
-  .showcase-section {
-    display: block !important;
-    margin: 0.6rem 0;
-    padding: 0;
-    break-inside: avoid;
-  }
-
-  .showcase-section .section-title.revealed {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .showcase-section .section-title {
-    font-size: 12pt !important;
-    margin-bottom: 0.3rem;
-  }
-
-  .carousel-container { margin: 0; }
-
-  .carousel-track {
-    display: block !important;
-    overflow: visible !important;
-    padding: 0 !important;
-    gap: 0;
-    scrollbar-width: none;
-  }
-
-  .project-card {
-    min-width: 0 !important;
-    max-width: 100% !important;
-    opacity: 1 !important;
-    transform: none !important;
-    background: none !important;
-    backdrop-filter: none !important;
-    border: none;
-    border-radius: 0;
-    padding: 0.5rem 0;
-    display: block;
-    flex-shrink: 1;
-    transition: none;
-  }
-
-  .project-card.hidden-up,
-  .project-card.revealed {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  .project-card + .project-card {
-    border-top: 1px solid #eee;
-    margin-top: 0.2rem;
-    padding-top: 0.4rem;
-  }
-
-  .project-image { display: none; }
-
-  .project-info { padding: 0; }
-
-  .project-title {
-    font-size: 10pt;
-    color: #1a1a2e !important;
-    font-weight: 700;
-    margin-bottom: 0.1rem;
-  }
-
-  .project-title::before {
-    content: "▸ ";
-    color: #2D9C7C;
-  }
-
-  .project-desc {
-    font-size: 8.5pt;
-    color: #444 !important;
-    margin-bottom: 0.2rem;
-  }
-
-  .project-tech { margin: 0; }
-
-  .project-tech span {
-    background: #f0fdf4 !important;
-    color: #166534 !important;
-    font-size: 6.5pt;
-    padding: 0.05rem 0.35rem;
-    border: 1px solid #bbf7d0;
-  }
-
-  .cv-download-section { display: none; }
+  .showcase-section,
+  .cv-download-section { display: none !important; }
 
   footer {
     opacity: 1 !important;
     transform: none !important;
     border-top: 1px solid #ddd;
     margin-top: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.5rem 0;
   }
 
   footer.revealed,
@@ -1166,11 +1083,31 @@ footer.revealed {
     transform: none !important;
   }
 
+  .footer-contact-row {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    font-size: 8.5pt;
+    color: #444 !important;
+    margin-bottom: 0.4rem;
+    justify-content: center;
+  }
+
+  .footer-contact-row i {
+    display: inline;
+    width: auto;
+    margin-right: 0.3rem;
+  }
+
+  .footer-contact-row a {
+    color: #2563eb !important;
+    text-decoration: underline;
+  }
+
   .footer-copyright {
     color: #666 !important;
     font-size: 8pt;
     text-align: left;
+    margin: 0;
   }
-
-  a { color: #2563eb !important; text-decoration: underline; }
 }
