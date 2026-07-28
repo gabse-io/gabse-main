@@ -833,6 +833,35 @@ footer.revealed {
   cursor: pointer;
 }
 
+/* ===== CV Download Button ===== */
+.cv-download-section {
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.btn-cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #2D9C7C, #1a6b54);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 40px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+.btn-cv-download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(45, 156, 124, 0.4);
+}
+
+.btn-cv-download i { font-size: 1.1rem; }
+
 @media (max-width: 600px) {
   .project-modal-content { max-width: 100%; margin: 0; border-radius: 16px; max-height: 95vh; }
   .modal-body { padding: 1rem; }
@@ -840,4 +869,215 @@ footer.revealed {
   .modal-advantages ul { grid-template-columns: 1fr; }
   .modal-header { padding: 1rem; }
   .modal-header h3 { font-size: 1rem; }
+}
+
+/* ===== Print Styles (CV PDF) ===== */
+@media print {
+  @page {
+    margin: 0.6in 0.5in;
+    size: A4;
+  }
+
+  * {
+    background: white !important;
+    color: #1a1a2e !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  #particleCanvas,
+  .glass-header,
+  .linkedin-btn,
+  .cursor-blink,
+  .btn-toggle-detail,
+  .btn-cv-download,
+  .carousel-container,
+  .carousel-btn,
+  .showcase-section,
+  .footer-social,
+  .footer-icon,
+  .timeline-node,
+  .project-modal-overlay {
+    display: none !important;
+  }
+
+  body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif !important;
+    font-size: 11pt;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+  }
+
+  .content { max-width: 100%; padding: 0; }
+
+  .hero-elegant {
+    padding: 0 0 0.5rem 0;
+    text-align: left;
+    border-bottom: 3px solid #2D9C7C;
+    margin-bottom: 0.8rem;
+  }
+
+  .hero-profile {
+    flex-direction: row;
+    gap: 1.2rem;
+    align-items: center;
+  }
+
+  .avatar-img {
+    width: 90px !important;
+    height: 90px !important;
+    border: 2px solid #2D9C7C;
+    display: block !important;
+  }
+
+  .hero-name {
+    font-size: 20pt !important;
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    color: #1a1a2e !important;
+    margin: 0;
+  }
+
+  .hero-subtitle {
+    font-size: 11pt;
+    color: #555 !important;
+    margin: 0.2rem 0;
+  }
+
+  .typing-effect { display: none; }
+
+  .section-header { padding: 0; margin: 0.8rem 0 0.3rem 0; }
+
+  .section-title {
+    font-size: 14pt !important;
+    opacity: 1 !important;
+    transform: none !important;
+    border-left: 3px solid #2D9C7C;
+    padding-left: 0.6rem;
+  }
+
+  .timeline {
+    max-width: 100%;
+    padding: 0;
+    margin: 0.3rem 0;
+  }
+
+  .timeline::before { display: none; }
+
+  .timeline-item {
+    display: block;
+    margin-bottom: 0.6rem;
+    padding: 0;
+    break-inside: avoid;
+  }
+
+  .exp-block {
+    width: 100%;
+    opacity: 1 !important;
+    transform: none !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 0.4rem;
+  }
+
+  .exp-block.revealed,
+  .exp-block.hidden-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .exp-header-block {
+    background: #f5f5f5 !important;
+    padding: 0.5rem 0.8rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .exp-company {
+    color: #1a1a2e !important;
+    font-size: 11pt;
+  }
+
+  .exp-company a { display: none; }
+
+  .exp-period {
+    color: #666 !important;
+    font-size: 8pt;
+  }
+
+  .exp-body-split {
+    display: block;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .exp-summary {
+    border: none;
+    padding: 0;
+  }
+
+  .exp-detail {
+    display: block !important;
+    max-height: none !important;
+    padding: 0.4rem 0 0 0 !important;
+    border-top: 1px solid #eee;
+    margin-top: 0.4rem;
+  }
+
+  .exp-detail-text {
+    font-size: 9pt;
+    color: #333 !important;
+  }
+
+  .exp-highlight {
+    background: #fef3e7 !important;
+    color: #c2410c !important;
+    font-size: 8pt;
+    padding: 0.3rem 0.6rem;
+    margin-top: 0.3rem;
+  }
+
+  .exp-tech span {
+    background: #eef2ff !important;
+    color: #4338ca !important;
+    font-size: 7pt;
+    padding: 0.1rem 0.4rem;
+    border: 1px solid #c7d2fe;
+  }
+
+  .exp-title {
+    font-size: 10pt;
+    color: #1a1a2e !important;
+  }
+
+  .exp-preview {
+    font-size: 9pt;
+    color: #444 !important;
+  }
+
+  .cv-download-section { display: none; }
+
+  footer {
+    opacity: 1 !important;
+    transform: none !important;
+    border-top: 1px solid #ddd;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  footer.revealed,
+  footer.hidden-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .footer-copyright {
+    color: #666 !important;
+    font-size: 8pt;
+    text-align: left;
+  }
+
+  a { color: #2563eb !important; text-decoration: underline; }
 }
