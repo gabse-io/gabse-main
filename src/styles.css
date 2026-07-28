@@ -575,7 +575,7 @@ footer.revealed {
   transform: translateY(0);
 }
 
-.footer-contact-row { display: none; }
+.print-contact { display: none; }
 
 .footer-social {
   display: flex;
@@ -948,14 +948,23 @@ footer.revealed {
     margin: 0.2rem 0;
   }
 
-  .hero-subtitle::after {
-    content: " · gabse.vercel.app";
-    font-size: 9pt;
-    color: #888 !important;
-    font-weight: 400;
+  .typing-effect { display: none; }
+
+  .print-contact {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 0.8rem 1.2rem;
+    font-size: 8pt;
+    color: #555 !important;
+    margin-top: 0.4rem;
+    justify-content: center;
   }
 
-  .typing-effect { display: none; }
+  .print-contact i {
+    display: inline;
+    width: auto;
+    margin-right: 0.3rem;
+  }
 
   .section-header { padding: 0; margin: 0.8rem 0 0.3rem 0; }
 
@@ -1081,27 +1090,6 @@ footer.revealed {
   footer.hidden-up {
     opacity: 1 !important;
     transform: none !important;
-  }
-
-  .footer-contact-row {
-    display: flex !important;
-    flex-wrap: wrap;
-    gap: 1.2rem;
-    font-size: 8.5pt;
-    color: #444 !important;
-    margin-bottom: 0.4rem;
-    justify-content: center;
-  }
-
-  .footer-contact-row i {
-    display: inline;
-    width: auto;
-    margin-right: 0.3rem;
-  }
-
-  .footer-contact-row a {
-    color: #2563eb !important;
-    text-decoration: underline;
   }
 
   .footer-copyright {
