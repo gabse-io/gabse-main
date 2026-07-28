@@ -946,6 +946,13 @@ footer.revealed {
     margin: 0.2rem 0;
   }
 
+  .hero-subtitle::after {
+    content: " · gabse.vercel.app";
+    font-size: 9pt;
+    color: #888 !important;
+    font-weight: 400;
+  }
+
   .typing-effect { display: none; }
 
   .section-header { padding: 0; margin: 0.8rem 0 0.3rem 0; }
@@ -1055,6 +1062,87 @@ footer.revealed {
   .exp-preview {
     font-size: 9pt;
     color: #444 !important;
+  }
+
+  .showcase-section {
+    display: block !important;
+    margin: 0.6rem 0;
+    padding: 0;
+    break-inside: avoid;
+  }
+
+  .showcase-section .section-title {
+    font-size: 12pt !important;
+    margin-bottom: 0.3rem;
+  }
+
+  .carousel-container { margin: 0; }
+
+  .carousel-track {
+    display: block !important;
+    overflow: visible;
+    padding: 0;
+    gap: 0;
+    scrollbar-width: none;
+  }
+
+  .project-card {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    opacity: 1 !important;
+    transform: none !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    border: none;
+    border-radius: 0;
+    padding: 0.3rem 0;
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .project-card.hidden-up,
+  .project-card.revealed {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .project-card + .project-card {
+    border-top: 1px solid #eee;
+    margin-top: 0.2rem;
+    padding-top: 0.4rem;
+  }
+
+  .project-image { display: none; }
+
+  .project-info { padding: 0; }
+
+  .project-title {
+    font-size: 10pt;
+    color: #1a1a2e !important;
+    font-weight: 700;
+    margin-bottom: 0.1rem;
+  }
+
+  .project-title::before {
+    content: "▸ ";
+    color: #2D9C7C;
+  }
+
+  .project-desc {
+    font-size: 8.5pt;
+    color: #444 !important;
+    margin-bottom: 0.2rem;
+  }
+
+  .project-tech { margin: 0; }
+
+  .project-tech span {
+    background: #f0fdf4 !important;
+    color: #166534 !important;
+    font-size: 6.5pt;
+    padding: 0.05rem 0.35rem;
+    border: 1px solid #bbf7d0;
   }
 
   .cv-download-section { display: none; }
