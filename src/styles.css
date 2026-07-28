@@ -1071,6 +1071,11 @@ footer.revealed {
     break-inside: avoid;
   }
 
+  .showcase-section .section-title.revealed {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .showcase-section .section-title {
     font-size: 12pt !important;
     margin-bottom: 0.3rem;
@@ -1080,8 +1085,8 @@ footer.revealed {
 
   .carousel-track {
     display: block !important;
-    overflow: visible;
-    padding: 0;
+    overflow: visible !important;
+    padding: 0 !important;
     gap: 0;
     scrollbar-width: none;
   }
@@ -1095,10 +1100,10 @@ footer.revealed {
     backdrop-filter: none !important;
     border: none;
     border-radius: 0;
-    padding: 0.3rem 0;
-    display: flex;
-    gap: 0.5rem;
-    align-items: flex-start;
+    padding: 0.5rem 0;
+    display: block;
+    flex-shrink: 1;
+    transition: none;
   }
 
   .project-card.hidden-up,
