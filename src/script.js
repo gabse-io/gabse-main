@@ -229,8 +229,13 @@ function scrollCarousel(direction) {
 }
 
 if (prevBtn && nextBtn) {
-  prevBtn.addEventListener('click', () => scrollCarousel('prev'));
-  nextBtn.addEventListener('click', () => scrollCarousel('next'));
+  if (ownProjects.length <= 1) {
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+  } else {
+    prevBtn.addEventListener('click', () => scrollCarousel('prev'));
+    nextBtn.addEventListener('click', () => scrollCarousel('next'));
+  }
 }
 
 carouselTrack.addEventListener('keydown', (e) => {
@@ -367,9 +372,9 @@ function mockupFormSVG() {
     <text x="120" y="48" text-anchor="middle" fill="#555" font-size="5" font-family="monospace">TURNOS</text>
     <rect x="16" y="62" width="208" height="30" rx="6" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="0.5"/>
     <text x="24" y="74" fill="#555" font-size="5" font-family="sans-serif">NOMBRE Y APELLIDO</text>
-    <text x="24" y="84" fill="#999" font-size="6" font-family="sans-serif">Juan P�rez</text>
+    <text x="24" y="84" fill="#999" font-size="6" font-family="sans-serif">Juan Pérez</text>
     <rect x="16" y="98" width="208" height="30" rx="6" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="0.5"/>
-    <text x="24" y="110" fill="#555" font-size="5" font-family="sans-serif">CORREO ELECTR�NICO</text>
+    <text x="24" y="110" fill="#555" font-size="5" font-family="sans-serif">CORREO ELECTRÓNICO</text>
     <text x="24" y="120" fill="#999" font-size="6" font-family="sans-serif">juan@gmail.com</text>
     <rect x="16" y="134" width="208" height="30" rx="6" fill="#1a1a1a" stroke="#2a2a2a" stroke-width="0.5"/>
     <text x="24" y="146" fill="#555" font-size="5" font-family="sans-serif">WHATSAPP</text>
@@ -436,12 +441,12 @@ function mockupSuccessSVG() {
     <circle cx="120" cy="80" r="12" fill="none" stroke="#28a745" stroke-width="2"/>
     <text x="120" y="84" text-anchor="middle" fill="#28a745" font-size="12" font-family="sans-serif">✓</text>
     <text x="120" y="112" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="sans-serif">Pre-Reserva Recibida</text>
-    <text x="120" y="128" text-anchor="middle" fill="#888" font-size="6" font-family="sans-serif">Tu lugar est� apartado para:</text>
+    <text x="120" y="128" text-anchor="middle" fill="#888" font-size="6" font-family="sans-serif">Tu lugar está apartado para:</text>
     <text x="120" y="146" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">15/07/2026 - 10:00 hs</text>
     <text x="120" y="162" text-anchor="middle" fill="#666" font-size="5" font-family="sans-serif">Barbero: Elias | Corte + Barba</text>
     <rect x="16" y="178" width="208" height="130" rx="10" fill="#141414" stroke="#2a2a2a" stroke-width="0.5"/>
     <text x="120" y="196" text-anchor="middle" fill="#aaa" font-size="5" font-weight="bold" font-family="sans-serif">PASOS PARA CONFIRMAR</text>
-    <text x="24" y="216" fill="#eee" font-size="6" font-family="sans-serif">1. Transfer� la se�a:</text>
+    <text x="24" y="216" fill="#eee" font-size="6" font-family="sans-serif">1. Transferí la seña:</text>
     <text x="120" y="232" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold" font-family="sans-serif">$6.000</text>
     <text x="24" y="252" fill="#aaa" font-size="5" font-family="sans-serif">Alias MP:</text>
     <rect x="16" y="258" width="208" height="30" rx="6" fill="#fff"/>
@@ -476,11 +481,11 @@ function mockupAdminSVG() {
     <text x="68" y="96" fill="#888" font-size="5" font-weight="bold" font-family="sans-serif">CLIENTE</text>
     <text x="140" y="96" fill="#888" font-size="5" font-weight="bold" font-family="sans-serif">BARBERO</text>
     <text x="200" y="96" fill="#888" font-size="5" font-weight="bold" font-family="sans-serif">ESTADO</text>
-    <text x="270" y="96" fill="#888" font-size="5" font-weight="bold" font-family="sans-serif">ACCI�N</text>
+    <text x="270" y="96" fill="#888" font-size="5" font-weight="bold" font-family="sans-serif">ACCIÓN</text>
     ${[
-      {f:'15/07 10:00', c:'Juan P�rez', b:'Elias', s:'Pagado'},
+      {f:'15/07 10:00', c:'Juan Pérez', b:'Elias', s:'Pagado'},
       {f:'15/07 11:00', c:'Pedro G.', b:'Lucas', s:'Pendiente'},
-      {f:'16/07 09:00', c:'Mart�n L.', b:'Elias', s:'Pendiente'}
+      {f:'16/07 09:00', c:'Martín L.', b:'Elias', s:'Pendiente'}
     ].map((r, i) => {
       const y = 108 + i*22;
       const statusColor = r.s === 'Pagado' ? '#28a745' : '#ffc107';
@@ -535,7 +540,7 @@ function openProjectDetail(projId) {
         <div class="modal-description">
           <p>${proj.detailDescription}</p>
         </div>
-        <div class="modal-tech"><span>Tecnolog�as:</span> ${proj.tech.map(t => `<span class="modal-tech-tag">${t}</span>`).join('')}</div>
+        <div class="modal-tech"><span>Tecnologías:</span> ${proj.tech.map(t => `<span class="modal-tech-tag">${t}</span>`).join('')}</div>
         <div class="modal-mockups">
           ${mockupsHTML}
         </div>

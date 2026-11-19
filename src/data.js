@@ -1,7 +1,7 @@
 export const experiences = [
   {
     id: 1, title: "Digital Commerce Analyst", company: "KUDOS COMMERCE", companyUrl: "https://www.kudoscommerce.com",
-    period: "Nov 2024 - Actual", tech: ["VTEX IO", "Postman", "Checkout API", "Apps Script", "n8n", "VS Code", "Windfurf IDE"],
+    period: "Nov 2024 - Actual", tech: ["VTEX IO", "Postman", "Checkout API", "Apps Script", "n8n", "VS Code", "Windsurf IDE"],
     preview: "Parametrización funcional de catálogo, checkout y pagos. Desarrollo de custom apps en VTEX IO y automatizaciones que incrementan el ticket promedio y optimizan la experiencia de compra.",
     detail: "Participo activamente en la parametrización funcional del Customer Journey, abarcando catálogo, promociones, checkout, pagos y logística. Incorporo conocimiento en VTEX IO para el desarrollo de custom apps que optimizan la experiencia de compra. Desarrollo soluciones orientadas a incrementar el ticket promedio, mejorar la conversión con estrategias de venta cruzada y adicionales, facilitar la decisión de compra mediante herramientas interactivas, y potenciar la vitrina principal con contenido audiovisual dinámico. Además, desarrollo automatizaciones con Apps Script, n8n, Google Sheets y APIs de VTEX para integrar procesos y mejorar la eficiencia operativa.",
     highlight: "+26% conversión en checkout"
