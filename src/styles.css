@@ -904,11 +904,24 @@ footer.revealed {
   }
 
   body {
-    font-family: 'Inter', 'Segoe UI', Arial, sans-serif !important;
+    /* Fuente de sistema a proposito (sin 'Inter'): algunos drivers de
+       impresion (p.ej. Microsoft Print to PDF en Windows) rasterizan
+       fuentes web no instaladas como imagen en vez de vector, lo que
+       deja el PDF sin texto seleccionable/legible para lectores de CV. */
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif !important;
     font-size: 11pt;
     line-height: 1.5;
     padding: 0;
     margin: 0;
+  }
+
+  i[class*="fa-"],
+  i[class^="fa-"] {
+    font-family: inherit !important;
+  }
+  i[class*="fa-"]::before,
+  i[class^="fa-"]::before {
+    content: '' !important;
   }
 
   .content { max-width: 100%; padding: 0; }
